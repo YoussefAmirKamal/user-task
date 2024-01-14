@@ -1,0 +1,88 @@
+<!------------- NAVBAR ------------>
+<nav>
+  <div class="container">
+    <div class="content">
+      <h2 class="logo">Products Sales Management</h2>
+      <ul>
+        <li> <a class="ainnav" style="text-decoration: none; color: white;" href="" routerLink="/products">Products</a>
+        </li>
+        <li> <a class="ainnav" style="text-decoration: none; color: white;" href="" routerLink="/cart">cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!------------- PICTURE BEFOR PRODUCTS ------------>
+
+<div class="beforProducts">
+  <p>This is Products Sales Management Website</p>
+
+</div>
+
+<div class="AllProducts">
+  <p>Products</p>
+</div>
+
+<div class="container">
+  <div class="box mt-5 ">
+    <div class="my-2 w-25">
+      <!------------- FILTERATION OPTION ------------>
+
+      <app-select [data]="Categories" [title]="'categories :'" (selectedvalue)=" filterCategory($event)"></app-select>
+    </div>
+    <div class="row">
+
+      <div class="col-md-3 col-sm-12" *ngFor="let item of products ">
+        <!------------- ADD TO CART OPTION ------------>
+
+        <app-product [data]="item" (item)="addToCart($event)"></app-product>
+      </div>
+    </div>
+    <div class="text-center w-100">
+    </div>
+  </div>
+</div>
+<!------------- FOOTER ------------>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <h4>company</h4>
+        <ul>
+          <li><a href="#">about us</a></li>
+          <li><a href="#">our services</a></li>
+          <li><a href="#">privacy policy</a></li>
+          <li><a href="#">affiliate program</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>get help</h4>
+        <ul>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">shipping</a></li>
+          <li><a href="#">returns</a></li>
+          <li><a href="#">order status</a></li>
+          <li><a href="#">payment options</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>online shop</h4>
+        <ul>
+          <li><a href="#">watch</a></li>
+          <li><a href="#">bag</a></li>
+          <li><a href="#">shoes</a></li>
+          <li><a href="#">dress</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>follow us</h4>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
